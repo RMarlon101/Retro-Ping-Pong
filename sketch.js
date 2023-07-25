@@ -12,11 +12,9 @@ let aiYPos = 100;
 let ballHitX,ballHitY;
 let ballHitHorizontal =100;
 let ballHitVertical = 50;
-
 function setup(){
 createCanvas(950, 600);
 }
-
 function draw(){
  background(0);
 let greenVal = 255;
@@ -26,40 +24,40 @@ if(gameState ==1){
   rect(375, 250,200,100);
   fill(255);
   textSize(30);
-  text("Start Game", 395,315);
+  text(“Start Game”, 395,315);
   textSize(20);
-  text("In order to win you must get a total of 5 points. But make sure not to get 5 points scored on your side,", 25,415);
-  text(" or you’ll lose", 405,445);
+  text(“In order to win you must get a total of 3 points. But make sure not to get 3 points scored on your side,“, 25,415);
+  text(” or you’ll lose”, 405,445);
   textSize(70);
-  text("Pong", 395, 215);
+  text(“Pong”, 395, 215);
   textSize(20);
-  text("By: Sebastian Reyna, Rashawn Brown, Rayane Skiker, and Marlon Rodriguez", 100, 475);
+  text(“By: Sebastian Reyna, Rashawn Brown, Rayane Skiker, and Marlon Rodriguez”, 100, 475);
 }
 //GAME STATE = 2 -- 1 OF 2 --- This will be the screen shown after the player looses
-if(aiScore == 5){
+if(aiScore == 3){
    gameState = 2;
   fill(0,255,0);
   rect(375, 250,200,100);
   fill(255);
   textSize(30);
-  text("Play again", 400,315);
+  text(“Play again”, 400,315);
   textSize(70);
-  text("Pong", 395,215);
+  text(“Pong”, 395,215);
   fill(255,0,0);
-  text("You Lost!", 325,115);
+  text(“You Lost!“, 325,115);
    }
 //GAME STATE = 2 -- 2 OF 2 --- This will be the screen shown after the player Wins
-if(playerScore == 5){
+if(playerScore == 3){
    gameState = 2;
   fill(0,255,0);
   rect(375, 250, 200, 100);
   fill(255);
   textSize(30);
-  text("Play again", 400, 315);
+  text(“Play again”, 400, 315);
   textSize(70);
-  text("Pong", 395, 215);
+  text(“Pong”, 395, 215);
   fill(0,255,0);
-  text("You WIN!", 325, 115);
+  text(“You WIN!“, 325, 115);
    }
 // This is what the game will look like as it is being played.
 if(gameState == 0){
@@ -77,8 +75,8 @@ let aiDirection = aiMoveSpeed;
 //(2) Score tracker --------------------------------------------
     fill(225);
     textSize(20);
-    text("You:" + " " + playerScore, 45, 25);
-    text("AI:"+ " " + aiScore, 860, 25);
+    text(‘You:’ + ” ” + playerScore, 45, 25);
+    text(‘AI:‘+ ” ” + aiScore, 860, 25);
 if (ballXPos > 950){
     ballXPos = 500;
     ballYPos = 375;
@@ -179,7 +177,6 @@ if (keyIsDown(DOWN_ARROW)&& myTop + 100 <= 580){
     }
   }
 }
-
 function mouseClicked(){
   //(7) this is what makes it possible to switch between modes--------------------------------
   if(mouseX > 375 && mouseX < 575 && mouseY > 250 && mouseY < 350 && gameState > 0 ){
